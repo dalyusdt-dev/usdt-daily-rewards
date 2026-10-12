@@ -1,0 +1,43 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #0b1220;
+  color: #f8fafc;
+  font-family: Arial, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+input {
+  max-width: 100%;
+}
+
+a {
+  color: #4ade80;
+}
+
+::selection {
+  background: #166534;
+  color: #ffffff;
+}
