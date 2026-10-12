@@ -16,7 +16,11 @@ export default function Home() {
 
   async function signUp() {
     if (!supabase) {
-      setMessage('Supabase environment variables are missing.');
+      setMessage(
+        ku
+          ? 'کلیلەکانی ژینگەی Supabase دانەنراون. تکایە NEXT_PUBLIC_SUPABASE_ANON_KEY لە بەشی Environment variables لە Netlify دابنێ.'
+          : 'Supabase environment variables are missing. Please add NEXT_PUBLIC_SUPABASE_ANON_KEY in Netlify Environment variables.'
+      );
       return;
     }
 
@@ -40,7 +44,11 @@ export default function Home() {
 
   async function signIn() {
     if (!supabase) {
-      setMessage('Supabase environment variables are missing.');
+      setMessage(
+        ku
+          ? 'کلیلەکانی ژینگەی Supabase دانەنراون. تکایە NEXT_PUBLIC_SUPABASE_ANON_KEY لە بەشی Environment variables لە Netlify دابنێ.'
+          : 'Supabase environment variables are missing. Please add NEXT_PUBLIC_SUPABASE_ANON_KEY in Netlify Environment variables.'
+      );
       return;
     }
 
