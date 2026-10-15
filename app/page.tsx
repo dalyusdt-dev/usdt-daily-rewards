@@ -2,15 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-
-const supabase =
-  supabaseUrl && supabaseKey
-    ? createClient(supabaseUrl, supabaseKey)
-    : null;
+import { supabase } from '@/lib/supabase';
 
 export default function Home() {
   const [language, setLanguage] = useState<'ku' | 'en'>('ku');
@@ -24,7 +16,11 @@ export default function Home() {
 
   async function signUp() {
     if (!supabase) {
-      setMessage('Supabase environment variables are missing.');
+      setMessage(
+        ku
+          ? 'کلیلەکانی ژینگەی Supabase دانەنراون. تکایە NEXT_PUBLIC_SUPABASE_ANON_KEY لە بەشی Environment variables لە Netlify دابنێ.'
+          : 'Supabase environment variables are missing. Please add NEXT_PUBLIC_SUPABASE_ANON_KEY in Netlify Environment variables.'
+      );
       return;
     }
 
@@ -48,7 +44,11 @@ export default function Home() {
 
   async function signIn() {
     if (!supabase) {
-      setMessage('Supabase environment variables are missing.');
+      setMessage(
+        ku
+          ? 'کلیلەکانی ژینگەی Supabase دانەنراون. تکایە NEXT_PUBLIC_SUPABASE_ANON_KEY لە بەشی Environment variables لە Netlify دابنێ.'
+          : 'Supabase environment variables are missing. Please add NEXT_PUBLIC_SUPABASE_ANON_KEY in Netlify Environment variables.'
+      );
       return;
     }
 
